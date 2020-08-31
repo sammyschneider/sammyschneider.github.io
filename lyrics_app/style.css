@@ -1,39 +1,73 @@
-/* * {
-  border: 1px solid gold;
-} */
+body {
+  background-color: aliceblue;
+}
+
 .header {
   /* background-color: lightblue; */
-  margin-bottom: 10px;
+  margin-bottom: 1%;
 }
 h1 {
   text-align: center;
-  background-color: lightblue;
+  background-color: #00d6a5;
   width: 50%;
   margin: auto;
+  font-size: 250%;
+  padding: 1%;
+  margin-top: 1%;
+  border-radius: 1em;
+  color: black;
 }
 
 form {
-  padding: 15px 15px;
+  padding: 1%;
   text-align: center;
+  margin: auto;
+  width: 20%;
 }
 input {
-  font-size: 18px;
+  font-size: 115%;
+}
+@media (max-width:600px) {
+  input {
+    font-size: 1em;
+  }
 }
 .reset {
   font-size: 18px;
 }
-.container {
+.pictures {
   display: flex;
-  flex-direction: column;
+  /* justify-content: space-between; */
+}
+img {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+.images-right {
   width: 50%;
   margin: auto;
 }
-.song {
-  margin-bottom: 15px;
-  padding: 10px;
-  font-size: 1em;
+.images-left {
+  width: 50%;
+  margin: auto;
 }
-
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+}
+.song {
+  margin-bottom: 4%;
+  padding: 2%;
+  font-size: 1.2em;
+  border-radius: 1em;
+}
+.song:hover {
+  color: blue;
+  font-weight: bold;
+}
  /* MODAL */
 /* #overlay {
   position: fixed;
@@ -46,12 +80,10 @@ input {
   overflow: auto;
 } */
 #modal {
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.8);
   position: fixed;
-  top: 50px;
-  left: 50px;
-  height: 90%;
-  width: 90%;
+  top: 0%;
+  height: 100%;
   z-index: 1;
   overflow: auto;
   display: none;
@@ -60,12 +92,10 @@ input {
 #modal-textbox {
   /* position: absolute; */
   background: white;
-  height: 550px;
-  width: 500px;
+  height: 100%;
+  width: 40%;
   border-radius: 2px;
   margin: 150px auto;
-  box-shadow: 0 2px 2px rgba(0,0,0,0.2)
-  padding: 10px;
   overflow: scroll;
 
 }
@@ -79,6 +109,7 @@ input {
   outline-style: inset;
   outline-color: lightblue;
   background-color: antiquewhite;
+  font-family: fantasy;
 }
 
 a:hover {
@@ -88,6 +119,9 @@ a:hover {
 
 #modal-textbox > h1 {
   margin-top: 10px;
+  font-family: fantasy;
+  color: white;
+  background-color: #1919e89e;
 }
 
 .lyrics {

@@ -34,9 +34,7 @@ $(() => {
             (data)=>{
               const $songLrics = data.result.track.text
               $('.lyrics').append($songLrics)
-              console.log($songLrics);
               $('#modal').css('display','block')
-              // })
             },
             ()=>{
                 console.log('bad');
