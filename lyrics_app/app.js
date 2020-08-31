@@ -25,7 +25,6 @@ $(() => {
     for (let i = 0;i<10;i++){
       const songTitles = response.response.hits[i].result.title
       const $h1 = $('<button>').addClass('song').text(songTitles).appendTo('.container')
-      const $lyricButton = $('<button>').addClass('lyric-button').text('Lyrics').appendTo($h1)
     }
     $('.song').on('click', (event) => {
       const songTitle = $(event.target).text();
@@ -33,11 +32,6 @@ $(() => {
             url:'https://orion.apiseeds.com/api/music/lyric/' +userInput + '/' + songTitle + '?apikey=XTym7nXEaPHH63xM5ogFCgj1kKiAu0EppXgcwlSA0fktKSn3krwKrJIOmTAnZSZZ'
         }).then(
             (data)=>{
-              // console.log(data.result.track.text);
-              // $('.lyric-button').on('click', (data) => {
-              //   const $songLrics = data.result.track.text
-              //   console.log($songLrics);
-                // $songLrics.appendTo('.lyrics');
               const $songLrics = data.result.track.text
               $('.lyrics').append($songLrics)
               console.log($songLrics);
@@ -56,7 +50,8 @@ $(() => {
     $('.container').text('')
   })
   $('#close-modal').on('click', () => {
-    $('#modal').css('display','none')
+    $('#modal').css('display','none');
+    $('p').text('')
   })
 
 })
