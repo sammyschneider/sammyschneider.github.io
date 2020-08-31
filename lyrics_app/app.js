@@ -1,23 +1,6 @@
 $(() => {
 
 
-  // $.ajax({
-  //           url:'https://sandbox-api.brewerydb.com/v2/locations?key=8851ebd04bbf1c458d5079340bb444d3',
-  //           type: "GET",
-  //           data: {limit: 5}
-  //         })
-  //       .then(
-  //           (data)=>{
-  //             for (let i =0;i<5;i++){
-  //             console.log(data.data[i].name);
-  //           }
-  //
-  //           },
-  //           ()=>{
-  //               console.log('bad');
-  //           }
-  //       );
-
   $('form').on('submit', (event) => {
 
     event.preventDefault();
@@ -27,8 +10,8 @@ $(() => {
 
 
   var settings = {
-  	"async": true,
-  	"crossDomain": true,
+  	// "async": true,
+  	// "crossDomain": true,
   	"url": "https://genius.p.rapidapi.com/search?q=" + userInput,
   	"method": "GET",
   	"headers": {
@@ -37,14 +20,34 @@ $(() => {
   	}
   }
 
-  $.ajax(settings).done(function (response) {
-    for (let i =0;i<10;i++){
+  $.ajax(settings)
+      .then(function (response) {
+    for (let i = 0;i<10;i++){
       const songTitles = response.response.hits[i].result.title
       const $h1 = $('<button>').addClass('song').text(songTitles).appendTo('.container')
-
+      const $lyricButton = $('<button>').addClass('lyric-button').text('Lyrics').appendTo($h1)
     }
     $('.song').on('click', (event) => {
-      console.log(event.target);
+      const songTitle = $(event.target).text();
+      $.ajax({
+            url:'https://orion.apiseeds.com/api/music/lyric/' +userInput + '/' + songTitle + '?apikey=XTym7nXEaPHH63xM5ogFCgj1kKiAu0EppXgcwlSA0fktKSn3krwKrJIOmTAnZSZZ'
+        }).then(
+            (data)=>{
+              // console.log(data.result.track.text);
+              // $('.lyric-button').on('click', (data) => {
+              //   const $songLrics = data.result.track.text
+              //   console.log($songLrics);
+                // $songLrics.appendTo('.lyrics');
+              const $songLrics = data.result.track.text
+              $('.lyrics').append($songLrics)
+              console.log($songLrics);
+              $('#modal').css('display','block')
+              // })
+            },
+            ()=>{
+                console.log('bad');
+            }
+        );
     })
 
   });
@@ -52,9 +55,12 @@ $(() => {
   $('.reset').on('click', () => {
     $('.container').text('')
   })
-
+  $('#close-modal').on('click', () => {
+    $('#modal').css('display','none')
+  })
 
 })
+
 
 
 })
