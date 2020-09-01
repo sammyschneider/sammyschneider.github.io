@@ -31,11 +31,7 @@ form {
 input {
   font-size: 115%;
 }
-@media (max-width:600px) {
-  input {
-    font-size: 1em;
-  }
-}
+
 .reset {
   font-size: 18px;
 }
@@ -93,7 +89,6 @@ img {
   border-radius: 2px;
   margin: 150px auto;
   overflow: scroll;
-
 }
 #close-modal {
   position: absolute;
@@ -130,4 +125,27 @@ a:hover {
 .lyrics:hover {
   color: #1919e89e;
   /* font-weight: bold; */
+}
+@media (max-width: 600px) {
+  body {
+    background-color: #1919e89e;
+  }
+  #modal-textbox {
+    /* position: absolute; */
+    background: white;
+    height: 80%;
+    width: 60%;
+    border-radius: 2px;
+    margin: 4% auto;
+    overflow: scroll;
+  }
+  .container {
+    width: auto;
+  }
+  input {
+    font-size: 1em;
+  }
+  .reset {
+    font-size: 1em;
+  }
 }
