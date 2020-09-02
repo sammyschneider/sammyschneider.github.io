@@ -9,26 +9,20 @@ $(() => {
     $('form').trigger('reset')
 
 
-  var settings = {
-  	// "async": true,
-  	// "crossDomain": true,
-  	"url": "https://genius.p.rapidapi.com/search?q=" + userInput,
-  	"method": "GET",
-  	"headers": {
-  		"x-rapidapi-host": "genius.p.rapidapi.com",
-  		"x-rapidapi-key": "bc0b35f5bdmshcbb8935a94c132fp1abf85jsnb66bf20c2ba9"
-  	}
-  }
-
-  $.ajax(settings)
-      .then(function (response) {
-    for (let i = 0;i<10;i++){
-      const songTitles = response.response.hits[i].result.title
-      const $h1 = $('<button>').addClass('song').text(songTitles).appendTo('.container')
+    var settings = {
+  	  "url": "https://genius.p.rapidapi.com/search?q=" + userInput,
+  	  "method": "GET"
     }
-    $('.song').on('click', (event) => {
-      const songTitle = $(event.target).text();
-      $.ajax({
+
+    $.ajax(settings)
+      .then((data) => {
+        for (let i = 0;i<10;i++){
+          const songTitles = data.response.hits[i].result.title
+          const $h1 = $('<button>').addClass('song').text(songTitles).appendTo('.container')
+    }
+      $('.song').on('click', (event) => {
+        const songTitle = $(event.target).text();
+        $.ajax({
             url:'https://orion.apiseeds.com/api/music/lyric/' +userInput + '/' + songTitle + '?apikey=XTym7nXEaPHH63xM5ogFCgj1kKiAu0EppXgcwlSA0fktKSn3krwKrJIOmTAnZSZZ'
         }).then(
             (data)=>{
@@ -42,17 +36,17 @@ $(() => {
         );
     })
 
-  });
+    });
 
-  $('.reset').on('click', () => {
-    $('.container').text('')
-  })
-  $('#close-modal').on('click', () => {
-    $('#modal').css('display','none');
-    $('p').text('')
-  })
+    $('.reset').on('click', () => {
+      $('.container').text('')
+    })
+    $('#close-modal').on('click', () => {
+      $('#modal').css('display','none');
+      $('p').text('')
+    })
 
-})
+  })
 
 
 

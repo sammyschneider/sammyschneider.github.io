@@ -1,13 +1,11 @@
-/* * {
-  border: 1px solid gold;
-} */
+/* ====== Body ======= */
+
 body {
   background-color: aliceblue;
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .header {
-  /* background-color: lightblue; */
   margin-bottom: 1%;
 }
 h1 {
@@ -22,7 +20,6 @@ h1 {
   color: black;
   font-family: 'Roboto',sans-serif;
 }
-
 form {
   padding: 1%;
   text-align: center;
@@ -31,13 +28,11 @@ form {
 input {
   font-size: 115%;
 }
-
 .reset {
   font-size: 18px;
 }
 .pictures {
   display: flex;
-  /* justify-content: space-between; */
 }
 img {
   width: 80%;
@@ -70,7 +65,6 @@ img {
   font-weight: bold;
 }
 /* ====== MODAL ========= */
-
 #modal {
   background-color: rgba(0,0,0,0.8);
   position: fixed;
@@ -79,10 +73,8 @@ img {
   z-index: 1;
   overflow: auto;
   display: none;
-  /* margin: auto; */
 }
 #modal-textbox {
-  /* position: absolute; */
   background: white;
   height: 100%;
   width: 40%;
@@ -102,19 +94,16 @@ img {
   background-color: antiquewhite;
   font-family: 'Roboto',sans-serif;
 }
-
 a:hover {
   color: #1919e89e;
   font-weight: bold;
 }
-
 #modal-textbox > h1 {
   margin-top: 10px;
   font-family: 'Roboto', sans-serif;
   color: white;
   background-color: #1919e89e;
 }
-
 .lyrics {
   margin: 40px;
   line-height: 1.7em;
@@ -126,6 +115,9 @@ a:hover {
   color: #1919e89e;
   /* font-weight: bold; */
 }
+
+/* ==== Media query ======*/
+
 @media (max-width: 600px) {
   body {
     background-color: #1919e89e;
