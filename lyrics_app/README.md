@@ -10,7 +10,7 @@ Technologies used:
 JS, HTML, CSS, Jquery, AJAX, JSON
 
 Approach taken:
-My approach was that I kept my end goal (seeing song lyrics) in mind while making the framework. I tried to research which API's were free an available to achieve this. I could not find any ~free~ API's from which I could pull data so I decided to use and implement two separate APIs. Ended up finding an API that could populate song titles based on userInput as well as an API that could generate song lyrics to a specific song. 
+My approach was that I kept my end goal (seeing song lyrics) in mind while making the framework. I tried to research which API's were free an available to achieve this. I could not find any "free" API's from which I could pull data so I decided to use and implement two separate APIs. Ended up finding an API that could populate song titles based on userInput as well as an API that could generate song lyrics to a specific song. 
 
 Unsolved problems: 
 Hardest part for me was design of the site (CSS) in terms of looks as well as media queries. 
