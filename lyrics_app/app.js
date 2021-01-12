@@ -1,3 +1,4 @@
+require('dotenv').config()
 $(() => {
 
 
@@ -14,7 +15,7 @@ $(() => {
   	   "method": "GET",
   	   "headers": {
   		   "x-rapidapi-host": "genius.p.rapidapi.com",
-  	     "x-rapidapi-key": "bc0b35f5bdmshcbb8935a94c132fp1abf85jsnb66bf20c2ba9"
+  	     "x-rapidapi-key": `${process.env.API_KEY}`
   	    }
     }
 
@@ -27,7 +28,7 @@ $(() => {
     $('.song').on('click', (event) => {
         const songTitle = $(event.target).text();
         $.ajax({
-              url:'https://orion.apiseeds.com/api/music/lyric/' +userInput + '/' + songTitle + '?apikey=XTym7nXEaPHH63xM5ogFCgj1kKiAu0EppXgcwlSA0fktKSn3krwKrJIOmTAnZSZZ'
+              url:'https://orion.apiseeds.com/api/music/lyric/' +userInput + '/' + songTitle + '?' + `${process.env.API_KEY2}`
         }).then(
             (data)=>{
             const $songLrics = data.result.track.text
